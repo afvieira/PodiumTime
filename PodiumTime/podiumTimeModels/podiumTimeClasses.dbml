@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PodiumTime" Class="podiumTimeClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=AFV\sqlexpress2012;Initial Catalog=PodiumTime;Integrated Security=True" SettingsObjectName="podiumTimeModels.Properties.Settings" SettingsPropertyName="PodiumTimeConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Inscricao" Member="Inscricaos">
+    <Type Name="Inscricao">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DataInscricao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Nome" Type="System.String" DbType="NVarChar(450)" CanBeNull="true" />
+      <Column Name="Sexo" Type="System.String" DbType="NVarChar(450)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(450)" CanBeNull="true" />
+      <Column Name="Equipa" Type="System.String" DbType="NVarChar(450)" CanBeNull="true" />
+      <Column Name="TipoInscricao" Type="System.String" DbType="NVarChar(450)" CanBeNull="true" />
+      <Column Name="DocIdentificacao" Type="System.String" DbType="NVarChar(450)" CanBeNull="true" />
+      <Column Name="Contacto" Type="System.String" DbType="NVarChar(450)" CanBeNull="true" />
+      <Column Name="Dorsal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Pago" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TamanhoJersey" Type="System.String" DbType="NVarChar(450)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="podiumTimeClasses">
+  <DataContextMoniker Name="/podiumTimeClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="d653555f-745b-418b-a02b-390e3b4cd52e" absoluteBounds="1.625, 1.125, 2, 3.1170068359375">
+      <DataClassMoniker Name="/podiumTimeClassesDataContext/Inscricao" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1956c7da-732b-4bf4-a9a3-fb382549c970" absoluteBounds="1.6400000000000001, 1.585, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
