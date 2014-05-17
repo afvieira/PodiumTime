@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PodiumTimeModels")]
+[assembly: AssemblyTitle("PodiumTimeController")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("PodiumTimeModels")]
+[assembly: AssemblyProduct("PodiumTimeController")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("7c736d45-0a42-4e30-ab64-ba82a60f063f")]
+[assembly: Guid("fb20f8dc-93b1-4b7d-b8ec-39611524e364")]
 
 // Version information for an assembly consists of the following four values:
 //

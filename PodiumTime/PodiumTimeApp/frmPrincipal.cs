@@ -6,25 +6,42 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
-using podiumTimeModels;
+using PodiumTimeController;
+using PodiumTimeModels;
 
-namespace PodiumTimeApp
-{
-    public partial class frmPrincipal : Telerik.WinControls.UI.RadForm
-    {
-        public frmPrincipal()
-        {
+namespace PodiumTimeApp {
+    public partial class frmPrincipal : Telerik.WinControls.UI.RadForm {
+
+        private EventoController _EventoController = new EventoController();
+        private InscricaoController _InscricaoController = new InscricaoController();
+
+        public frmPrincipal() {
             InitializeComponent();
         }
 
-        private void frmPrincipal_Load(object sender, EventArgs e)
-        {
-            podiumTimeClassesDataContext db = new podiumTimeClassesDataContext();
+        private void frmPrincipal_Load(object sender, EventArgs e) {
+            try {
+                cmbEventos.DataSource = _EventoController.GetAll(true);
+            } catch(Exception ex) {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+        }
 
-            var inscricoes = from i in db.Inscricaos
-                             select i;
+        private void cmbEventos_SelectedIndexChanged(object sender, Telerik.WinControls.UI.Data.PositionChangedEventArgs e) {
+            int eventoID;
 
-            raddgvInscricoes.DataSource = inscricoes;
+            try {
+                eventoID = (int)cmbEventos.SelectedValue;
+
+                if(eventoID == -1) {
+                    dgvInscricoes.DataSource = null;
+                } else {
+                    dgvInscricoes.DataSource = _InscricaoController.GetAllByEvento(eventoID);
+                }
+
+            } catch(Exception ex) {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
         }
     }
 }

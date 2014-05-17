@@ -7,9 +7,9 @@
     <ProjectGuid>{04B3C592-771C-48D1-95AE-01321CAC63C4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>podiumTimeModels</RootNamespace>
-    <AssemblyName>podiumTimeModels</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <RootNamespace>PodiumTimeModels</RootNamespace>
+    <AssemblyName>PodiumTimeModels</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,10 +31,20 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.Linq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,15 +52,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="podiumTimeClasses.designer.cs">
+    <Compile Include="PodiumTimeModels.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>podiumTimeClasses.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="PodiumTimeDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PodiumTimeDataSet.xsd</DependentUpon>
+      <DependentUpon>PodiumTimeModels.dbml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -59,22 +65,19 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-    <None Include="podiumTimeClasses.dbml">
+    <None Include="PodiumTimeModels.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>podiumTimeClasses.designer.cs</LastGenOutput>
+      <LastGenOutput>PodiumTimeModels.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="PodiumTimeDataSet.xsc">
-      <DependentUpon>PodiumTimeDataSet.xsd</DependentUpon>
+    <None Include="PodiumTimeModels.dbml.namePrefs">
+      <DependentUpon>PodiumTimeModels.dbml</DependentUpon>
     </None>
-    <None Include="PodiumTimeDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PodiumTimeDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
+    <None Include="PodiumTimeModels.dbml.syncPrefs">
+      <DependentUpon>PodiumTimeModels.dbml</DependentUpon>
     </None>
-    <None Include="PodiumTimeDataSet.xss">
-      <DependentUpon>PodiumTimeDataSet.xsd</DependentUpon>
+    <None Include="PodiumTimeModels.dbml.views">
+      <DependentUpon>PodiumTimeModels.dbml</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -85,8 +88,8 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="podiumTimeClasses.dbml.layout">
-      <DependentUpon>podiumTimeClasses.dbml</DependentUpon>
+    <None Include="PodiumTimeModels.dbml.layout">
+      <DependentUpon>PodiumTimeModels.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
