@@ -152,8 +152,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="chronometer.ico" />
+    <Content Include="Imagens\16\delete.png" />
+    <Content Include="Imagens\16\edit.png" />
+    <Content Include="Imagens\16\edit_add.png" />
     <Content Include="Imagens\16\excel.png" />
     <Content Include="Imagens\16\filter.png" />
+    <Content Include="Imagens\16\save.png" />
     <Content Include="Imagens\24\search.png" />
     <Content Include="Imagens\48\plus.png" />
     <Content Include="Imagens\Custom\chronometer.ico" />

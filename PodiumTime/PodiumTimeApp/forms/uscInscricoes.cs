@@ -63,6 +63,8 @@ namespace PodiumTimeApp.forms {
             try {
                 if(cmbEvento.SelectedItem != null && (int)cmbEvento.SelectedValue > 0) {
                     dgvInscricoes.DataSource = _inscricaoController.GetAllByEvento((int)cmbEvento.SelectedValue);
+                } else {
+                    dgvInscricoes.DataSource = null;
                 }
                 this.resizeGrid();
             } catch(Exception ex) {
@@ -118,6 +120,14 @@ namespace PodiumTimeApp.forms {
             if(String.Equals(e.Property.Name, "IsVisible")) {
                 this.resizeGrid();
             }
+        }
+
+        private void radLabel5_Click(object sender, EventArgs e) {
+
+        }
+
+        private void radLabel7_Click(object sender, EventArgs e) {
+
         }
     }
 }
