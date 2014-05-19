@@ -28,4 +28,10 @@
 		</TaggedOutputs> -->
 	</ItemGroup>
 	<Import Project="$(MSBuildExtensionsPath32)\InstallShield\2013Limited\InstallShield.targets"/>
+	<ItemGroup>
+		<ProjectReference Include="..\PodiumTimeApp\PodiumTimeApp.csproj">
+			<Name>PodiumTimeApp</Name>
+			<Project>{7F6101A8-5B7C-493B-A646-B691DFAFAE55}</Project>
+		</ProjectReference>
+	</ItemGroup>
 </Project>

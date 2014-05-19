@@ -52,6 +52,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connection.cs" />
+    <Compile Include="PodiumTimeModels.cs">
+      <DependentUpon>PodiumTimeModels.dbml</DependentUpon>
+    </Compile>
     <Compile Include="PodiumTimeModels.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -65,6 +69,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="PodiumTimeModels.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>PodiumTimeModels.designer.cs</LastGenOutput>

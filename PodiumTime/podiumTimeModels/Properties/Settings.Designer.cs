@@ -22,16 +22,5 @@ namespace PodiumTimeModels.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=AFV\\sqlexpress2012;Initial Catalog=PodiumTime;Integrated Security=Tru" +
-            "e")]
-        public string PodiumTimeConnectionString {
-            get {
-                return ((string)(this["PodiumTimeConnectionString"]));
-            }
-        }
     }
 }
