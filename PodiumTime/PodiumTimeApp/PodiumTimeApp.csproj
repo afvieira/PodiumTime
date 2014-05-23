@@ -60,17 +60,17 @@
     <Reference Include="TelerikData, Version=2014.1.402.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="forms\uscEventos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\uscEventos.Designer.cs">
+      <DependentUpon>uscEventos.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="forms\frmInscricoes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\frmInscricoes.Designer.cs">
-      <DependentUpon>frmInscricoes.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\frmMessage.cs">
       <SubType>Form</SubType>
@@ -84,11 +84,22 @@
     <Compile Include="forms\uscInscricoes.Designer.cs">
       <DependentUpon>uscInscricoes.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\uscProvas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\uscProvas.Designer.cs">
+      <DependentUpon>uscProvas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Geral\geral.cs" />
     <Compile Include="img16.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>img16.resx</DependentUpon>
+    </Compile>
+    <Compile Include="img64.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>img64.resx</DependentUpon>
     </Compile>
     <Compile Include="imgCustom.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -97,11 +108,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="forms\uscEventos.resx">
+      <DependentUpon>uscEventos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmInscricoes.resx">
-      <DependentUpon>frmInscricoes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmMessage.resx">
       <DependentUpon>frmMessage.cs</DependentUpon>
@@ -109,9 +120,16 @@
     <EmbeddedResource Include="forms\uscInscricoes.resx">
       <DependentUpon>uscInscricoes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\uscProvas.resx">
+      <DependentUpon>uscProvas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="img16.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>img16.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="img64.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>img64.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="imgCustom.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -157,9 +175,11 @@
     <Content Include="Imagens\16\edit_add.png" />
     <Content Include="Imagens\16\excel.png" />
     <Content Include="Imagens\16\filter.png" />
+    <Content Include="Imagens\16\import.png" />
     <Content Include="Imagens\16\save.png" />
     <Content Include="Imagens\24\search.png" />
     <Content Include="Imagens\48\plus.png" />
+    <Content Include="Imagens\64\player_play.png" />
     <Content Include="Imagens\Custom\chronometer.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

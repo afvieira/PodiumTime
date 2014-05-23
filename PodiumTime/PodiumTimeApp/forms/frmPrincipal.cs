@@ -58,11 +58,19 @@ namespace PodiumTimeApp.forms {
         #region Botoes
 
         private void btnEventos_Click(object sender, EventArgs e) {
-
+            try {
+                addControl("Eventos", new uscEventos());
+            } catch(Exception ex) {
+                Geral.geral.showErrorMessage(ex);
+            }
         }
 
         private void btnProvas_Click(object sender, EventArgs e) {
-
+            try {
+                addControl("Provas", new uscProvas());
+            } catch(Exception ex) {
+                Geral.geral.showErrorMessage(ex);
+            }
         }
 
         private void btnResultados_Click(object sender, EventArgs e) {

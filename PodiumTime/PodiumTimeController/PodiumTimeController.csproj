@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ResultadoController.cs" />
+    <Compile Include="ProvaController.cs" />
     <Compile Include="InscricaoController.cs" />
     <Compile Include="EventoController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

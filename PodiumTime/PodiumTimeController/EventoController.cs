@@ -7,17 +7,17 @@ using PodiumTimeModels;
 
 namespace PodiumTimeController {
     public class EventoController {
-        PodiumTimeModelsDataContext ctx;
 
         public EventoController() {
-            ctx = new PodiumTimeModelsDataContext();
         }
 
         public List<Evento> GetAll(bool itemBranco = false) {
             List<Evento> result = new List<Evento>();
 
-            result = (from e in ctx.Eventos
-                      select e).ToList();
+            using(PodiumTimeModelsDataContext ctx = new PodiumTimeModelsDataContext()) {
+                result = (from e in ctx.Eventos
+                          select e).ToList();
+            }
 
             if(itemBranco) {
                 result.Insert(0, new Evento() { ID = -1 });
@@ -29,11 +29,46 @@ namespace PodiumTimeController {
         public Evento Find(int id) {
             Evento result = null;
 
-            //result = from e in ctx.Eventos
-            //         where e.ID == id
-            //         select e;
+            using(PodiumTimeModelsDataContext ctx = new PodiumTimeModelsDataContext()) {
+                result = (from e in ctx.Eventos
+                          where e.ID == id
+                          select e).FirstOrDefault();
+            }
 
             return result;
+        }
+
+        public void Delete(int eventoID) {
+            using(PodiumTimeModelsDataContext ctx = new PodiumTimeModelsDataContext()) {
+                var evento = from e in ctx.Eventos
+                             where e.ID == eventoID
+                             select e;
+
+                ctx.Eventos.DeleteOnSubmit(evento.Single());
+                ctx.SubmitChanges();
+            }
+        }
+
+        public void Save(PodiumTimeModels.Evento eventoSelecionado) {
+
+            using(PodiumTimeModelsDataContext ctx = new PodiumTimeModelsDataContext()) {
+                if(eventoSelecionado != null && eventoSelecionado.ID > 0) {
+                    var evento = (from e in ctx.Eventos
+                                  where e.ID == eventoSelecionado.ID
+                                  select e).Single();
+
+                    evento.ID = eventoSelecionado.ID;
+                    evento.Nome = eventoSelecionado.Nome;
+                    evento.Data = eventoSelecionado.Data;
+                    evento.Cancelado = eventoSelecionado.Cancelado;
+                    evento.Descricao = eventoSelecionado.Descricao;
+
+                    ctx.SubmitChanges();
+                } else {
+                    ctx.Eventos.InsertOnSubmit(eventoSelecionado);
+                    ctx.SubmitChanges();
+                }
+            }
         }
 
         public bool isValid(Evento evento) {

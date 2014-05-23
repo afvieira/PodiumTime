@@ -40,18 +40,18 @@
             this.txtStackTrace.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtStackTrace.Location = new System.Drawing.Point(12, 57);
+            this.txtStackTrace.Location = new System.Drawing.Point(12, 78);
             this.txtStackTrace.Multiline = true;
             this.txtStackTrace.Name = "txtStackTrace";
             this.txtStackTrace.ReadOnly = true;
             this.txtStackTrace.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtStackTrace.Size = new System.Drawing.Size(430, 137);
+            this.txtStackTrace.Size = new System.Drawing.Size(430, 145);
             this.txtStackTrace.TabIndex = 0;
             // 
             // btnOK
             // 
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOK.Location = new System.Drawing.Point(397, 200);
+            this.btnOK.Location = new System.Drawing.Point(397, 229);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(45, 36);
             this.btnOK.TabIndex = 1;
@@ -68,7 +68,7 @@
             this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.ReadOnly = true;
-            this.txtMessage.Size = new System.Drawing.Size(430, 39);
+            this.txtMessage.Size = new System.Drawing.Size(430, 60);
             this.txtMessage.TabIndex = 2;
             // 
             // frmMessage
@@ -76,7 +76,7 @@
             this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(454, 248);
+            this.ClientSize = new System.Drawing.Size(454, 277);
             this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtStackTrace);
