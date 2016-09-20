@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PodiumTime" Class="PodiumTimeModelsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=AFV\sqlexpress2012;Initial Catalog=PodiumTime;Integrated Security=True" SettingsObjectName="PodiumTimeModels.Properties.Settings" SettingsPropertyName="PodiumTimeConnectionString_old" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Evento" Member="Eventos">
+    <Type Name="Evento">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Data" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Nome" Type="System.String" DbType="NVarChar(450) NOT NULL" CanBeNull="false" />
+      <Column Name="Cancelado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Descricao" Type="System.String" DbType="NVarChar(450)" CanBeNull="true" />
+      <Association Name="Evento_Inscricao" Member="Inscricaos" ThisKey="ID" OtherKey="EventoID" Type="Inscricao" />
+      <Association Name="Evento_Prova" Member="Provas" ThisKey="ID" OtherKey="EventoID" Type="Prova" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Resultado" Member="Resultados">
+    <Type Name="Resultado">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NomeParticipante" Type="System.String" DbType="NVarChar(450) NOT NULL" CanBeNull="false" />
+      <Column Name="Equipa" Type="System.String" DbType="NVarChar(450)" CanBeNull="true" />
+      <Column Name="Dorsal" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DocIdentificacao" Type="System.String" DbType="NVarChar(450)" CanBeNull="true" />
+      <Column Name="ProvaID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Prova_Resultado" Member="Prova" ThisKey="ProvaID" OtherKey="ID" Type="Prova" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Inscricao" Member="Inscricaos">
+    <Type Name="Inscricao">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DataInscricao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Contacto" Type="System.String" DbType="NVarChar(450)" CanBeNull="true" />
+      <Column Name="Dorsal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Pago" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TamanhoJersey" Type="System.String" DbType="NVarChar(450)" CanBeNull="true" />
+      <Column Name="EventoID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="NVarChar(450)" CanBeNull="true" />
+      <Column Name="Sexo" Type="System.String" DbType="NVarChar(450)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(450)" CanBeNull="true" />
+      <Column Name="Equipa" Type="System.String" DbType="NVarChar(450)" CanBeNull="true" />
+      <Column Name="TipoInscricao" Type="System.String" DbType="NVarChar(450)" CanBeNull="true" />
+      <Column Name="DocIdentificacao" Type="System.String" DbType="NVarChar(450)" CanBeNull="true" />
+      <Association Name="Evento_Inscricao" Member="Evento" ThisKey="EventoID" OtherKey="ID" Type="Evento" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Prova" Member="Provas">
+    <Type Name="Prova">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="NVarChar(450) NOT NULL" CanBeNull="false" />
+      <Column Name="Descricao" Type="System.String" DbType="NVarChar(450) NOT NULL" CanBeNull="false" />
+      <Column Name="Distancia" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="EventoID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Prova_Resultado" Member="Resultados" ThisKey="ID" OtherKey="ProvaID" Type="Resultado" />
+      <Association Name="Evento_Prova" Member="Evento" ThisKey="EventoID" OtherKey="ID" Type="Evento" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

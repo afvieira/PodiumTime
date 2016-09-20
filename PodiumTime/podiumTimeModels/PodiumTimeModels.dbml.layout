@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="PodiumTimeModels">
+  <DataContextMoniker Name="/PodiumTimeModelsDataContext" />
+  <nestedChildShapes>
+    <classShape Id="8dfe12d4-e348-466a-a5b1-9d1008e7497f" absoluteBounds="0.875, 1, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/PodiumTimeModelsDataContext/Evento" />
+      <nestedChildShapes>
+        <elementListCompartment Id="37b648fe-688e-4e3f-9204-ac4be2cc56fe" absoluteBounds="0.89, 1.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="12f2b5de-921b-4dd8-b2e4-1bdf718aa781" absoluteBounds="4.875, 3.25, 2, 1.9631982421875003">
+      <DataClassMoniker Name="/PodiumTimeModelsDataContext/Resultado" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2fd63b08-0766-4959-a4a5-d59144d4f48d" absoluteBounds="4.89, 3.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="206505c8-0146-41e9-8278-82535a22920b" absoluteBounds="7.625, 0.875, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/PodiumTimeModelsDataContext/Inscricao" />
+      <nestedChildShapes>
+        <elementListCompartment Id="73e6d5b1-6f44-4f27-a6e3-e929a69e9f1f" absoluteBounds="7.6400000000000006, 1.335, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="45cba2c6-803d-436e-b55b-c2de40fe6990" absoluteBounds="0.875, 3.5, 2, 1.7708968098958329">
+      <DataClassMoniker Name="/PodiumTimeModelsDataContext/Prova" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2d393a24-fee6-4e76-92ad-a8469a522adc" absoluteBounds="0.89000000000000012, 3.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.875 : 1.88544840494792); (7.625 : 1.88544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PodiumTimeModelsDataContext/Evento/Evento_Inscricao" />
+      <nodes>
+        <classShapeMoniker Id="8dfe12d4-e348-466a-a5b1-9d1008e7497f" />
+        <classShapeMoniker Id="206505c8-0146-41e9-8278-82535a22920b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.875 : 4.35659912109375); (4.875 : 4.35659912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PodiumTimeModelsDataContext/Prova/Prova_Resultado" />
+      <nodes>
+        <classShapeMoniker Id="45cba2c6-803d-436e-b55b-c2de40fe6990" />
+        <classShapeMoniker Id="12f2b5de-921b-4dd8-b2e4-1bdf718aa781" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.875 : 2.77089680989583); (1.875 : 3.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PodiumTimeModelsDataContext/Evento/Evento_Prova" />
+      <nodes>
+        <classShapeMoniker Id="8dfe12d4-e348-466a-a5b1-9d1008e7497f" />
+        <classShapeMoniker Id="45cba2c6-803d-436e-b55b-c2de40fe6990" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
